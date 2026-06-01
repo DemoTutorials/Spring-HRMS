@@ -1,0 +1,62 @@
+.passport-file-upload,
+.aadhar-file-upload {
+  margin-top: 15px;
+}
+
+.personalinfofileInput {
+  display: none;
+}
+
+.upload-doc-btn {
+  background-color: #534686;
+  color: #ffffff;
+  height: 35px;
+  width: 150px;
+}
+.mat-select-value-text.custom-select-value {
+  font-size: 18px; /* Adjust the font size as needed */
+  color: black; /* Adjust the color as needed */
+  font-weight: 450;
+}
+
+.view_file {
+  margin-left: 10px;
+}
+
+.profile-save-btn {
+  background-color: #534686;
+  border-color: #534686;
+}
+
+mat-label {
+  font-weight: 550;
+}
+
+.upload-doc-btn:hover {
+  background-color: #534686;
+  border-color: #534686;
+  transform: scale(1.05);
+}
+
+.profile-save-btn:hover {
+  background-color: #534686;
+  border-color: #534686;
+  transform: scale(1.05);
+}
+
+.main-div {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.validate-text {
+  padding: 0px !important;
+}
+
+.head-name {
+  color: #534686;
+}
+
+:host::ng-deep .mat-mdc-form-field-error-wrapper{
+  padding: 0px !important;
+}

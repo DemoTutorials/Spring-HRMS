@@ -1,0 +1,62 @@
+.address_tenure {
+  margin-top: 40px;
+}
+
+.col-lg-2 {
+  flex-basis: 10%; /* Adjust the width percentage as needed */
+}
+
+.col-lg-1 {
+  flex-basis: 11.5%; /* Adjust the width percentage as needed */
+}
+
+
+:host ::ng-deep .address-details-save-btn {
+  background-color: #534686;
+  border: #534686;
+}
+
+.inline {
+  display: inline;
+  margin-right: 10px; /* Add some spacing between elements */
+}
+
+.mat-select-value-text.custom-select-value {
+  font-size: 18px; /* Adjust the font size as needed */
+  color: black; /* Adjust the color as needed */
+  font-weight: 450;
+}
+
+.validate-text {
+  font-size: 9px;
+  padding-bottom: 5px;
+  text-align: left;
+  color: red;
+  position: relative;
+  left: -15px;
+}
+
+mat-label {
+  font-weight: 550;
+}
+
+.address-details-save-btn:hover {
+  background-color: #534686;
+  border-color: #534686;
+  transform: scale(1.05);
+}
+
+.main-div {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.head-name {
+  color: #534686;
+}
+
+.formHeader {
+  margin-bottom: 15px;
+  font-size: larger;
+  color: #534686;
+}

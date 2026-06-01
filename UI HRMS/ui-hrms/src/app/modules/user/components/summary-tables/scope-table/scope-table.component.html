@@ -1,0 +1,10 @@
+<app-datatable
+  [buttonVisible]="buttonVisible"
+  (buttonFunction)="action($event)"
+  (deleteFunction)="action($event)"
+  (paginationParams)="searchFunction($event)"
+  [dataSource]="scopeMetaData.content"
+  [headers]="scopeHeaders.columnsMetadata"
+  [totalRecord]="scopeMetaData.totalElements"
+  [masterName]="masterName"
+></app-datatable>
