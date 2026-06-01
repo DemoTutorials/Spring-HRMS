@@ -12,13 +12,13 @@ export class RoleService {
 
   getRoles(): Observable<Array<Role>> {
     return this.http.get<Array<Role>>(
-      'http://192.168.1.16:7000/employee/role/all-roles'
+      'http://localhost:7000/employee/role/all-roles'
     );
   }
 
   getRolesHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/role'
+      'http://localhost:7000/employee/data-table-metadata/role'
     );
   }
 
@@ -26,28 +26,28 @@ export class RoleService {
     console.log('in create service', data);
 
     return this.http.post<Array<Role>>(
-      'http://192.168.1.16:7000/employee/role/create',
+      'http://localhost:7000/employee/role/create',
       data
     );
   }
 
   searchRoleById(id: string): Observable<Role> {
     return this.http.get<Role>(
-      'http://192.168.1.16:7000/employee/role/search/' + id
+      'http://localhost:7000/employee/role/search/' + id
     );
   }
 
   updateRole(data: Role): Observable<Array<Role>> {
     console.log(data);
     return this.http.put<Array<Role>>(
-      'http://192.168.1.16:7000/employee/role/update',
+      'http://localhost:7000/employee/role/update',
       data
     );
   }
 
   deleteRole(roleId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/role/delete/' +
+      'http://localhost:7000/employee/role/delete/' +
         roleId +
         '?updatedBy=Admin'
     );
@@ -57,7 +57,7 @@ export class RoleService {
     params: HttpParams
   ): Observable<{ content: Array<Role>; totalElements: number }> {
     return this.http.get<{ content: Array<Role>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/role/search',
+      'http://localhost:7000/employee/role/search',
       {
         params: params,
       }

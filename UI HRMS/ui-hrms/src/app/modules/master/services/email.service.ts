@@ -16,7 +16,7 @@ export class EmailService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7010/data-table-metadata/email-info'
+      'http://localhost:7010/data-table-metadata/email-info'
     );
   }
 
@@ -24,7 +24,7 @@ export class EmailService {
     params: HttpParams
   ): Observable<{ content: Array<Email>; totalElements: number }> {
     return this.http.get<{ content: Array<Email>; totalElements: number }>(
-      'http://192.168.1.16:7010/email/get-all',
+      'http://localhost:7010/email/get-all',
       {
         params: params,
       }
@@ -33,7 +33,7 @@ export class EmailService {
 
   searchEmailById(id: string): Observable<Email> {
     return this.http.get<Email>(
-      'http://192.168.1.16:7010/email/get?id=' + id
+      'http://localhost:7010/email/get?id=' + id
     );
   }
       createEmail(formData:FormData): Observable<any> {
@@ -45,7 +45,7 @@ export class EmailService {
           })
         };
   
-    return this.http.post('http://192.168.1.16:7010/email/send', formData);
+    return this.http.post('http://localhost:7010/email/send', formData);
    
   }
 

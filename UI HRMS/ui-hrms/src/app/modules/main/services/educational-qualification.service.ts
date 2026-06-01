@@ -16,7 +16,7 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<EducationalQualification> {
     return this.http.post<EducationalQualification>(
-      `http://192.168.1.16:7000/employee/education/${employeeId}/add`,
+      `http://localhost:7000/employee/education/${employeeId}/add`,
       educationalQualification
     );
   }
@@ -26,7 +26,7 @@ export class EducationalQualificationService {
     employeeId: number
   ) {
     return this.http.put<EducationalQualification>(
-      `http://192.168.1.16:7000/employee/education/${employeeId}/update`,
+      `http://localhost:7000/employee/education/${employeeId}/update`,
       educationalQualification
     );
   }
@@ -39,13 +39,13 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<Array<EducationalQualification>> {
     return this.http.get<Array<EducationalQualification>>(
-      `http://192.168.1.16:7000/employee/education/${employeeId}/get-all`
+      `http://localhost:7000/employee/education/${employeeId}/get-all`
     );
   }
 
   getQualificationLevels(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      `http://192.168.1.16:7000/employee/common-master/Qualification Level?sort=priority,code`
+      `http://localhost:7000/employee/common-master/Qualification Level?sort=priority,code`
     );
   }
 
@@ -53,7 +53,7 @@ export class EducationalQualificationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/educational-qualification'
+      'http://localhost:7000/employee/data-table-metadata/educational-qualification'
     );
   }
 
@@ -62,7 +62,7 @@ export class EducationalQualificationService {
     educationalId: number
   ): Observable<EducationalQualification> {
     return this.http.get<EducationalQualification>(
-      `http://192.168.1.16:7000/employee/education/${employeeId}/${educationalId}`
+      `http://localhost:7000/employee/education/${employeeId}/${educationalId}`
     );
   }
 
@@ -71,7 +71,7 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      `http://192.168.1.16:7000/employee/education/${employeeId}/${EducationalQualificationId}?updatedBy='Admin'`
+      `http://localhost:7000/employee/education/${employeeId}/${EducationalQualificationId}?updatedBy='Admin'`
     );
   }
   search(
@@ -84,7 +84,7 @@ export class EducationalQualificationService {
     return this.http.get<{
       content: Array<EducationalQualification>;
       totalElements: number;
-    }>(`http://192.168.1.16:7000/employee/education/${employeeId}/search`, {
+    }>(`http://localhost:7000/employee/education/${employeeId}/search`, {
       params: params,
     });
   }

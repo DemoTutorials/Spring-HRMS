@@ -12,7 +12,7 @@ export class LoginService {
 
   authenticate(data: LoginRequest): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(
-      'http://192.168.1.16:7020/auth/login',
+      'http://localhost:7020/auth/login',
       data
     );
   }

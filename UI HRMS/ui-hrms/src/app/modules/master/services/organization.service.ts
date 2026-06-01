@@ -14,7 +14,7 @@ export class OrganizationService {
 
   getOrganizations(): Observable<Array<Organization>> {
     return this.http.get<Array<Organization>>(
-      'http://192.168.1.16:7000/employee/organization/get-all'
+      'http://localhost:7000/employee/organization/get-all'
     );
   }
 
@@ -22,7 +22,7 @@ export class OrganizationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/organization'
+      'http://localhost:7000/employee/data-table-metadata/organization'
     );
   }
 
@@ -30,27 +30,27 @@ export class OrganizationService {
     console.log('in create service', data);
 
     return this.http.post<Array<Organization>>(
-      'http://192.168.1.16:7000/employee/organization/create',
+      'http://localhost:7000/employee/organization/create',
       data
     );
   }
 
   searchOrganizationByCode(orgCode: string): Observable<Organization> {
     return this.http.get<Organization>(
-      'http://192.168.1.16:7000/employee/organization/' + orgCode
+      'http://localhost:7000/employee/organization/' + orgCode
     );
   }
 
   updateOrganization(data: Organization): Observable<Array<Organization>> {
     return this.http.put<Array<Organization>>(
-      'http://192.168.1.16:7000/employee/organization/update',
+      'http://localhost:7000/employee/organization/update',
       data
     );
   }
 
   deleteOrganization(orgCode: string): Observable<string> {
     return this.http.delete<string>(
-      'http://192.168.1.16:7000/employee/organization/' +
+      'http://localhost:7000/employee/organization/' +
         orgCode +
         '?updatedBy=Admin'
     );
@@ -62,7 +62,7 @@ export class OrganizationService {
     return this.http.get<{
       content: Array<Organization>;
       totalElements: number;
-    }>('http://192.168.1.16:7000/employee/organization/search', {
+    }>('http://localhost:7000/employee/organization/search', {
       params: params,
     });
   }

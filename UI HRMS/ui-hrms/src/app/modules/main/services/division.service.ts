@@ -16,7 +16,7 @@ export class DivisionService {
 
   createDivision(division: Division): Observable<Division> {
     return this.http.post<Division>(
-      'http://192.168.1.16:7000/employee/division/create',
+      'http://localhost:7000/employee/division/create',
       division
     );
   }
@@ -25,7 +25,7 @@ export class DivisionService {
 
   getDivisions(): Observable<Array<Division>> {
     return this.http.get<Array<Division>>(
-      'http://192.168.1.16:7000/employee/division/get-all'
+      'http://localhost:7000/employee/division/get-all'
     );
   }
 
@@ -33,26 +33,26 @@ export class DivisionService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/division'
+      'http://localhost:7000/employee/data-table-metadata/division'
     );
   }
 
   searchDivisionById(divisionId: string): Observable<Division> {
     return this.http.get<Division>(
-      'http://192.168.1.16:7000/employee/division/' + divisionId
+      'http://localhost:7000/employee/division/' + divisionId
     );
   }
 
   updateDivision(divisionId: string): Observable<Division> {
     return this.http.put<Division>(
-      'http://192.168.1.16:7000/employee/division/update',
+      'http://localhost:7000/employee/division/update',
       divisionId
     );
   }
 
   deleteDivision(divisionId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/division/' +
+      'http://localhost:7000/employee/division/' +
       divisionId +
       '?updatedBy=Admin'
     );
@@ -61,7 +61,7 @@ export class DivisionService {
     params: HttpParams
   ): Observable<{ content: Array<Division>; totalElements: number }> {
     return this.http.get<{ content: Array<Division>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/division/search',
+      'http://localhost:7000/employee/division/search',
       {
         params: params,
       }

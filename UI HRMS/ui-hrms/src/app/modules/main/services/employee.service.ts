@@ -25,7 +25,7 @@ export class EmployeeService {
   createEmployee(employee: Employees): Observable<Employees> {
     console.log(employee);
     return this.http.post<Employees>(
-      'http://192.168.1.16:7000/employee/add',
+      'http://localhost:7000/employee/add',
       employee
     );
   }
@@ -35,7 +35,7 @@ export class EmployeeService {
     emp_id: number
   ): Observable<EmployeePersonalDetails> {
     return this.http.post<EmployeePersonalDetails>(
-      'http://192.168.1.16:7000/employee/personal-details/create/' + emp_id,
+      'http://localhost:7000/employee/personal-details/create/' + emp_id,
       employee
     );
   }
@@ -43,14 +43,14 @@ export class EmployeeService {
   AddVisaDetails(visa: Visa, emp_id: number): Observable<Visa> {
     //visa: Visa
     return this.http.post<Visa>(
-      'http://192.168.1.16:7000/employee/visa/' + emp_id + '/add',
+      'http://localhost:7000/employee/visa/' + emp_id + '/add',
       visa
     );
   }
 
   updateEmployee(Id: string): Observable<Employees> {
     return this.http.put<Employees>(
-      'http://192.168.1.16:7000/employee/update',
+      'http://localhost:7000/employee/update',
       Id
     );
   }
@@ -58,7 +58,7 @@ export class EmployeeService {
   updateEmployeevisa(Id: string, emp_id: number): Observable<Visa> {
     console.log('visaaaid', Id);
     return this.http.put<Visa>(
-      'http://192.168.1.16:7000/employee/visa/' + emp_id + '/update',
+      'http://localhost:7000/employee/visa/' + emp_id + '/update',
       Id
     );
   }
@@ -69,20 +69,20 @@ export class EmployeeService {
   ): Observable<EmployeePersonalDetails> {
     console.log('visaaaid', Id);
     return this.http.put<EmployeePersonalDetails>(
-      'http://192.168.1.16:7000/employee/personal-details/update/' + emp_id,
+      'http://localhost:7000/employee/personal-details/update/' + emp_id,
       Id
     );
   }
 
   searchEmployeeById(Id: string): Observable<Employees> {
-    return this.http.get<Employees>('http://192.168.1.16:7000/employee/' + Id);
+    return this.http.get<Employees>('http://localhost:7000/employee/' + Id);
   }
 
   getEmployeeHeaders(): Observable<{
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/employee'
+      'http://localhost:7000/employee/data-table-metadata/employee'
     );
   }
 
@@ -90,7 +90,7 @@ export class EmployeeService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/visa'
+      'http://localhost:7000/employee/data-table-metadata/visa'
     );
   }
 
@@ -98,7 +98,7 @@ export class EmployeeService {
     params: HttpParams
   ): Observable<{ content: Array<Employees>; totalElements: number }> {
     return this.http.get<{ content: Array<Employees>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/search',
+      'http://localhost:7000/employee/search',
       {
         params: params,
       }
@@ -110,7 +110,7 @@ export class EmployeeService {
     id: number
   ): Observable<{ content: Array<Visa>; totalElements: number }> {
     return this.http.get<{ content: Array<Visa>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/visa/' + id + '/search',
+      'http://localhost:7000/employee/visa/' + id + '/search',
       {
         params: params,
       }
@@ -119,7 +119,7 @@ export class EmployeeService {
 
   searchVisaById(emp_id: string, visaid: number): Observable<Visa> {
     return this.http.get<Visa>(
-      'http://192.168.1.16:7000/employee/visa/' + emp_id + '/' + visaid
+      'http://localhost:7000/employee/visa/' + emp_id + '/' + visaid
     );
   }
 
@@ -127,19 +127,19 @@ export class EmployeeService {
     emp_id: string
   ): Observable<EmployeePersonalDetails> {
     return this.http.get<EmployeePersonalDetails>(
-      'http://192.168.1.16:7000/employee/personal-details/' + emp_id
+      'http://localhost:7000/employee/personal-details/' + emp_id
     );
   }
 
   deleteEmployee(employeeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/' + employeeId + '?updatedBy=Admin'
+      'http://localhost:7000/employee/' + employeeId + '?updatedBy=Admin'
     );
   }
 
   deleteEmployeeVisa(visa_id: any, employeeId: any): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/visa/' +
+      'http://localhost:7000/employee/visa/' +
         employeeId +
         '/' +
         visa_id +
@@ -161,49 +161,49 @@ export class EmployeeService {
 
   getTitle(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Title?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Title?sort=priority,code'
     );
   }
 
   getGender(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Gender?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Gender?sort=priority,code'
     );
   }
 
   getAllEmployee(): Observable<Array<Employees>> {
     return this.http.get<Array<Employees>>(
-      'http://192.168.1.16:7000/employee/get-all'
+      'http://localhost:7000/employee/get-all'
     );
   }
 
   getMaritalStatus(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Marital Status?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Marital Status?sort=priority,code'
     );
   }
 
   getBloodGroup(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Blood Group?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Blood Group?sort=priority,code'
     );
   }
 
   getCountryCode(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Country?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Country?sort=priority,code'
     );
   }
 
   getStatus(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Status?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Status?sort=priority,code'
     );
   }
 
   deleteProfileImage(employeeId: number): Observable<Employees> {
     return this.http.delete<Employees>(
-      'http://192.168.1.16:7000/employee/delete/image/' + employeeId
+      'http://localhost:7000/employee/delete/image/' + employeeId
     );
   }
 }

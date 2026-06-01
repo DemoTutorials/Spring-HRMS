@@ -12,31 +12,31 @@ export class ChildService {
 
   getChilds(masterName: string): Observable<Array<Parent>> {
     return this.http.get<Array<Parent>>(
-      'http://192.168.1.16:7000/employee/common-master/masterName/search-childs'
+      'http://localhost:7000/employee/common-master/masterName/search-childs'
     );
   }
 
   getChildHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/child-common-master'
+      'http://localhost:7000/employee/data-table-metadata/child-common-master'
     );
   }
 
   createChild(data: Parent): Observable<Parent> {
     return this.http.post<Parent>(
-      'http://192.168.1.16:7000/employee/common-master/create',
+      'http://localhost:7000/employee/common-master/create',
       data
     );
   }
   searchChildById(id: number): Observable<Parent> {
     return this.http.get<Parent>(
-      'http://192.168.1.16:7000/employee/common-master/get/' + id
+      'http://localhost:7000/employee/common-master/get/' + id
     );
   }
 
   deleteChild(childId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/common-master/' +
+      'http://localhost:7000/employee/common-master/' +
         childId +
         '?updatedBy=Admin'
     );
@@ -46,7 +46,7 @@ export class ChildService {
     masterName: string,
     params: HttpParams
   ): Observable<{ content: Array<Parent>; totalElements: number }> {
-    const url = `http://192.168.1.16:7000/employee/common-master/${masterName}/search-childs?sort=priority,code`;
+    const url = `http://localhost:7000/employee/common-master/${masterName}/search-childs?sort=priority,code`;
 
     return this.http.get<{ content: Array<Parent>; totalElements: number }>(
       url,
@@ -59,7 +59,7 @@ export class ChildService {
   updateChild(data: Parent): Observable<Parent> {
     console.log(data);
     return this.http.put<Parent>(
-      'http://192.168.1.16:7000/employee/common-master/update',
+      'http://localhost:7000/employee/common-master/update',
       data
     );
   }

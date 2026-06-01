@@ -19,8 +19,8 @@ import jakarta.validation.constraints.Size;
 @Table(name="address")
 public class Address extends Status{
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "address_id_squenece_generator")
-	@SequenceGenerator(name="address_id_squenece_generator", initialValue = 1, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "address_id_sequence_generator")
+	@SequenceGenerator(name="address_id_sequence_generator", initialValue = 1, allocationSize = 1)
 	@Column(name="id")
 	private Long id;
 	

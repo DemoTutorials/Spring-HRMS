@@ -19,7 +19,7 @@ export class UserRoleService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7080/data-table-metadata/userRoles'
+      'http://localhost:7080/data-table-metadata/userRoles'
     );
   }
 
@@ -27,7 +27,7 @@ export class UserRoleService {
     params: HttpParams
   ): Observable<{ content: Array<UserRole>; totalElements: number }> {
     return this.http.get<{ content: Array<UserRole>; totalElements: number }>(
-      'http://192.168.1.16:7080/role/page-all-realm',
+      'http://localhost:7080/role/page-all-realm',
       {
         params: params,
       }
@@ -36,28 +36,28 @@ export class UserRoleService {
 
   createRole(role: UserRole): Observable<UserRole> {
     return this.http.post<UserRole>(
-      'http://192.168.1.16:7080/role/create',
+      'http://localhost:7080/role/create',
       role
     );
   }
 
   getRoles(): Observable<Array<UserRole>> {
     return this.http.get<Array<UserRole>>(
-      'http://192.168.1.16:7080/role/get-all-realm'
+      'http://localhost:7080/role/get-all-realm'
     );
   }
 
   searchRoleById(roleId: string): Observable<UserRole> {
-    return this.http.get<UserRole>('http://192.168.1.16:7080/role/' + roleId);
+    return this.http.get<UserRole>('http://localhost:7080/role/' + roleId);
   }
 
   updateRole(role: UserRole): Observable<UserRole> {
-    return this.http.put<UserRole>('http://192.168.1.16:7080/role', role);
+    return this.http.put<UserRole>('http://localhost:7080/role', role);
   }
 
   deleteRole(roleId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7080/role/' + roleId
+      'http://localhost:7080/role/' + roleId
     );
   }
 

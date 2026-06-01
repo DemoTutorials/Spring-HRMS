@@ -22,7 +22,7 @@ export class WorkExperienceService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/work-experience'
+      'http://localhost:7000/employee/data-table-metadata/work-experience'
     );
   }
 
@@ -32,7 +32,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<WorkExperience> {
     return this.http.post<WorkExperience>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/add`,
+      `http://localhost:7000/employee/work-experience/${employeeId}/add`,
 
       workExperience
     );
@@ -44,7 +44,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<WorkExperience> {
     return this.http.put<WorkExperience>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/update`,
+      `http://localhost:7000/employee/work-experience/${employeeId}/update`,
 
       workExperience
     );
@@ -52,7 +52,7 @@ export class WorkExperienceService {
 
   getWorkExperiences(employeeId: number): Observable<Array<WorkExperience>> {
     return this.http.get<Array<WorkExperience>>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/get-all`
+      `http://localhost:7000/employee/work-experience/${employeeId}/get-all`
     );
   }
 
@@ -62,7 +62,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/${workExperienceId}?updatedBy=Admin`
+      `http://localhost:7000/employee/work-experience/${employeeId}/${workExperienceId}?updatedBy=Admin`
     );
   }
 
@@ -72,7 +72,7 @@ export class WorkExperienceService {
     workExperienceId: number
   ): Observable<WorkExperience> {
     return this.http.get<WorkExperience>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/${workExperienceId}`
+      `http://localhost:7000/employee/work-experience/${employeeId}/${workExperienceId}`
     );
   }
 
@@ -90,7 +90,7 @@ export class WorkExperienceService {
 
       totalElements: number;
     }>(
-      `http://192.168.1.16:7000/employee/work-experience/${employeeId}/search`,
+      `http://localhost:7000/employee/work-experience/${employeeId}/search`,
 
       {
         params: params,

@@ -14,7 +14,7 @@ export class DesignationService {
 
   getDesignations(): Observable<Array<Designation>> {
     return this.http.get<Array<Designation>>(
-      'http://192.168.1.16:7000/employee/designation/get-all'
+      'http://localhost:7000/employee/designation/get-all'
 
     );
 
@@ -24,7 +24,7 @@ export class DesignationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/designation'
+      'http://localhost:7000/employee/data-table-metadata/designation'
     );
   }
 
@@ -32,28 +32,28 @@ export class DesignationService {
     console.log('in create service', data);
 
     return this.http.post<Array<Designation>>(
-      'http://192.168.1.16:7000/employee/designation/create',
+      'http://localhost:7000/employee/designation/create',
       data
     );
   }
 
   searchDesignationById(id: string): Observable<Designation> {
     return this.http.get<Designation>(
-      'http://192.168.1.16:7000/employee/designation/' + id
+      'http://localhost:7000/employee/designation/' + id
     );
   }
 
   updateDesignation(data: Designation): Observable<Array<Designation>> {
     console.log(data);
     return this.http.put<Array<Designation>>(
-      'http://192.168.1.16:7000/employee/designation/update',
+      'http://localhost:7000/employee/designation/update',
       data
     );
   }
 
   deleteDesignation(designationId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/designation/' +
+      'http://localhost:7000/employee/designation/' +
       designationId +
       '?updatedBy=Admin'
     );
@@ -65,7 +65,7 @@ export class DesignationService {
     return this.http.get<{
       content: Array<Designation>;
       totalElements: number;
-    }>('http://192.168.1.16:7000/employee/designation/search', {
+    }>('http://localhost:7000/employee/designation/search', {
       params: params,
     });
   }

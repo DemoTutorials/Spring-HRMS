@@ -14,19 +14,19 @@ export class CompanyDetailsService {
 
   getAllDefaultShift(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Default Shift?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Default Shift?sort=priority,code'
     );
   }
 
   getAllProbations(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Probation?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Probation?sort=priority,code'
     );
   }
 
   getAllBillables(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://192.168.1.16:7000/employee/common-master/Billable?sort=priority,code'
+      'http://localhost:7000/employee/common-master/Billable?sort=priority,code'
     );
   }
 
@@ -35,7 +35,7 @@ export class CompanyDetailsService {
     employeeId: number
   ): Observable<CompanyDetails> {
     return this.http.put<CompanyDetails>(
-      'http://192.168.1.16:7000/employee/company-detail/update/' + employeeId,
+      'http://localhost:7000/employee/company-detail/update/' + employeeId,
       companyDetails
     );
   }
@@ -52,20 +52,20 @@ export class CompanyDetailsService {
   }
   createComapanyDetails(companyDetails: CompanyDetails, id: number) {
     return this.http.post<CompanyDetails>(
-      'http://192.168.1.16:7000/employee/company-detail/create/' + id,
+      'http://localhost:7000/employee/company-detail/create/' + id,
       companyDetails
     );
   }
 
   searchCompanyDetailsById(Id: string): Observable<CompanyDetails> {
     return this.http.get<CompanyDetails>(
-      'http://192.168.1.16:7000/employee/company-detail/' + Id
+      'http://localhost:7000/employee/company-detail/' + Id
     );
   }
 
   // updateCompanyDetails(formData: any) {
   //   return this.http.put<Employees>(
-  //     'http://192.168.1.16:7000/employee/update',
+  //     'http://localhost:7000/employee/update',
   //     Id
   //   );
   // }

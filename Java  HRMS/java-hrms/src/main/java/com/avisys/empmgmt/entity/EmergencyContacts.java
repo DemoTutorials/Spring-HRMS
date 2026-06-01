@@ -16,7 +16,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class EmergencyContacts extends Status {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "address_id_squenece_generator")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "contact_id_squenece_generator")
 	@SequenceGenerator(name="contact_id_squenece_generator", initialValue = 1, allocationSize = 1)
 	@Column(name="id")
 	private Long id;

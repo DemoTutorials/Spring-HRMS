@@ -12,32 +12,32 @@ export class ParentService {
 
   getParents(): Observable<Array<Parent>> {
     return this.http.get<Array<Parent>>(
-      'http://192.168.1.16:7000/employee/common-master/search-parents'
+      'http://localhost:7000/employee/common-master/search-parents'
     );
   }
 
   getParentsHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/parent-common-master'
+      'http://localhost:7000/employee/data-table-metadata/parent-common-master'
     );
   }
 
   createParent(data: Parent): Observable<Parent> {
     return this.http.post<Parent>(
-      'http://192.168.1.16:7000/employee/common-master/create',
+      'http://localhost:7000/employee/common-master/create',
       data
     );
   }
   // Needs to modify
   searchParentById(id: number): Observable<Parent> {
     return this.http.get<Parent>(
-      'http://192.168.1.16:7000/employee/common-master/get/' + id
+      'http://localhost:7000/employee/common-master/get/' + id
     );
   }
 
   deleteParent(parentId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/common-master/' +
+      'http://localhost:7000/employee/common-master/' +
         parentId +
         '?updatedBy=Admin'
     );
@@ -47,7 +47,7 @@ export class ParentService {
     params: HttpParams
   ): Observable<{ content: Array<Parent>; totalElements: number }> {
     return this.http.get<{ content: Array<Parent>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/common-master/search-parents',
+      'http://localhost:7000/employee/common-master/search-parents',
       {
         params: params,
       }

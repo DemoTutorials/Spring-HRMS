@@ -15,14 +15,14 @@ export class EmployeeTypeService {
 
   createEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(
-      'http://192.168.1.16:7000/employee/employee-type/create',
+      'http://localhost:7000/employee/employee-type/create',
       employee
     );
   }
 
   getEmployeeTypes(): Observable<Array<Employee>> {
     return this.http.get<Array<Employee>>(
-      'http://192.168.1.16:7000/employee/employee-type/get-all'
+      'http://localhost:7000/employee/employee-type/get-all'
     );
   }
 
@@ -30,26 +30,26 @@ export class EmployeeTypeService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/employeeType-type'
+      'http://localhost:7000/employee/data-table-metadata/employeeType-type'
     );
   }
 
   searchEmployeeById(id: number): Observable<Employee> {
     return this.http.get<Employee>(
-      'http://192.168.1.16:7000/employee/employee-type/by-id/' + id
+      'http://localhost:7000/employee/employee-type/by-id/' + id
     );
   }
 
   updateEmployee(employeeTypeId: string): Observable<Employee> {
     return this.http.put<Employee>(
-      'http://192.168.1.16:7000/employee/employee-type/update',
+      'http://localhost:7000/employee/employee-type/update',
       employeeTypeId
     );
   }
 
   deleteEmployee(employeeTypeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/employee-type/delete/' +
+      'http://localhost:7000/employee/employee-type/delete/' +
         employeeTypeId +
         '?updatedBy=Admin'
     );
@@ -59,7 +59,7 @@ export class EmployeeTypeService {
     params: HttpParams
   ): Observable<{ content: Array<Employee>; totalElements: number }> {
     return this.http.get<{ content: Array<Employee>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/employee-type/search',
+      'http://localhost:7000/employee/employee-type/search',
       {
         params: params,
       }

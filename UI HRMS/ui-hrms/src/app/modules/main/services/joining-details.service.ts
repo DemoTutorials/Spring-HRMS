@@ -27,14 +27,14 @@ export class JoiningDetailsService {
     joiningDetails: JoiningDetails
   ): Observable<JoiningDetails> {
     return this.http.post<JoiningDetails>(
-      `http://192.168.1.16:7000/employee/joining-detail/create/${employeeId}`,
+      `http://localhost:7000/employee/joining-detail/create/${employeeId}`,
 
       joiningDetails
     );
   }
   getByEmployeeId(id: number): Observable<JoiningDetails> {
     return this.http.get<JoiningDetails>(
-      'http://192.168.1.16:7000/employee/joining-detail/' + id
+      'http://localhost:7000/employee/joining-detail/' + id
     );
   }
   updateJoiningDetails(
@@ -42,7 +42,7 @@ export class JoiningDetailsService {
     joiningDetails: JoiningDetails
   ): Observable<JoiningDetails> {
     return this.http.put<JoiningDetails>(
-      `http://192.168.1.16:7000/employee/joining-detail/update/${employeeId}`,
+      `http://localhost:7000/employee/joining-detail/update/${employeeId}`,
 
       joiningDetails
     );

@@ -14,14 +14,14 @@ export class GradeService {
 
   getGrades(): Observable<Array<Grade>> {
     return this.http.get<Array<Grade>>(
-      'http://192.168.1.16:7000/employee/grade/get-all'
+      'http://localhost:7000/employee/grade/get-all'
     );
 
   }
 
   getGradesHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://192.168.1.16:7000/employee/data-table-metadata/grade'
+      'http://localhost:7000/employee/data-table-metadata/grade'
     );
   }
 
@@ -29,28 +29,28 @@ export class GradeService {
     console.log('in create service', data);
 
     return this.http.post<Array<Grade>>(
-      'http://192.168.1.16:7000/employee/grade/create',
+      'http://localhost:7000/employee/grade/create',
       data
     );
   }
 
   searchByGradeId(id: string): Observable<Grade> {
     return this.http.get<Grade>(
-      'http://192.168.1.16:7000/employee/grade/' + id
+      'http://localhost:7000/employee/grade/' + id
     );
   }
 
   updateGrade(data: Grade): Observable<Array<Grade>> {
     console.log(data);
     return this.http.put<Array<Grade>>(
-      'http://192.168.1.16:7000/employee/grade/update',
+      'http://localhost:7000/employee/grade/update',
       data
     );
   }
 
   deleteGrade(gradeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://192.168.1.16:7000/employee/grade/delete/' +
+      'http://localhost:7000/employee/grade/delete/' +
       gradeId +
       '?updatedBy=Admin'
     );
@@ -58,7 +58,7 @@ export class GradeService {
 
   gradeTypeFromCommonMaster(): Observable<{ gradeType: Array<GradeType> }> {
     return this.http.get<{ gradeType: Array<GradeType> }>(
-      'http://192.168.1.16:8000/utility/masters/commonMaster/Grade Type'
+      'http://localhost:8000/utility/masters/commonMaster/Grade Type'
     );
   }
 
@@ -66,7 +66,7 @@ export class GradeService {
     params: HttpParams
   ): Observable<{ content: Array<Grade>; totalElements: number }> {
     return this.http.get<{ content: Array<Grade>; totalElements: number }>(
-      'http://192.168.1.16:7000/employee/grade/get',
+      'http://localhost:7000/employee/grade/get',
       {
         params: params,
       }
