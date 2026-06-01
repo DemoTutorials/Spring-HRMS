@@ -19,7 +19,7 @@ echo "Firewall status:"
 sudo ufw status
 
 echo "Copying environment file..."
-SOURCE="/home/aniketvaishampayan1998/HRMS/environment_variable.env"
+SOURCE="/home/aniketvaishampayan1998/Spring-HRMS/configuration_files/environment_variable.env"
 DEST="/root/environment_variable.env"
 
 if [ -f "$SOURCE" ]; then
