@@ -10,7 +10,7 @@ echo "Enabling firewall..."
 sudo ufw --force enable
 
 echo "Allowing required ports..."
-for port in 5432 7000 7010
+for port in 5432 7000 7010 8081 8090
 do
     sudo ufw allow ${port}/tcp
 done
