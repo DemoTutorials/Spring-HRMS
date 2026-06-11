@@ -16,14 +16,14 @@ export class DivisionService {
 
   createDivision(division: Division): Observable<Division> {
     return this.http.post<Division>(
-      'http://localhost:7000/employee/division/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/create',
       division
     );
   }
 
   getDivisions(): Observable<Array<Division>> {
     return this.http.get<Array<Division>>(
-      'http://localhost:7000/employee/division/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/get-all'
     );
   }
 
@@ -31,26 +31,26 @@ export class DivisionService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/division'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/division'
     );
   }
 
   searchDivisionById(divisionId: string): Observable<Division> {
     return this.http.get<Division>(
-      'http://localhost:7000/employee/division/' + divisionId
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/' + divisionId
     );
   }
 
   updateDivision(divisionId: string): Observable<Division> {
     return this.http.put<Division>(
-      'http://localhost:7000/employee/division/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/update',
       divisionId
     );
   }
 
   deleteDivision(divisionId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/division/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/' +
         divisionId +
         '?updatedBy=Admin'
     );
@@ -59,7 +59,7 @@ export class DivisionService {
     params: HttpParams
   ): Observable<{ content: Array<Division>; totalElements: number }> {
     return this.http.get<{ content: Array<Division>; totalElements: number }>(
-      'http://localhost:7000/employee/division/search',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/division/search',
       {
         params: params,
       }

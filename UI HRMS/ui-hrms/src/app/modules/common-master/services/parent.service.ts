@@ -12,32 +12,32 @@ export class ParentService {
 
   getParents(): Observable<Array<Parent>> {
     return this.http.get<Array<Parent>>(
-      'http://localhost:7000/employee/common-master/search-parents'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/search-parents'
     );
   }
 
   getParentsHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/parent-common-master'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/parent-common-master'
     );
   }
 
   createParent(data: Parent): Observable<Parent> {
     return this.http.post<Parent>(
-      'http://localhost:7000/employee/common-master/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/create',
       data
     );
   }
   // Needs to modify
   searchParentById(id: number): Observable<Parent> {
     return this.http.get<Parent>(
-      'http://localhost:7000/employee/common-master/get/' + id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/get/' + id
     );
   }
 
   deleteParent(parentId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/common-master/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/' +
         parentId +
         '?updatedBy=Admin'
     );
@@ -47,7 +47,7 @@ export class ParentService {
     params: HttpParams
   ): Observable<{ content: Array<Parent>; totalElements: number }> {
     return this.http.get<{ content: Array<Parent>; totalElements: number }>(
-      'http://localhost:7000/employee/common-master/search-parents',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/search-parents',
       {
         params: params,
       }

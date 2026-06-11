@@ -14,14 +14,14 @@ export class DepartmentService {
 
   createDepartment(department: Department): Observable<Department> {
     return this.http.post<Department>(
-      'http://localhost:7000/employee/departments/add-department',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/add-department',
       department
     );
   }
 
   getDepartments(): Observable<Array<Department>> {
     return this.http.get<Array<Department>>(
-      'http://localhost:7000/employee/departments/allDepartments'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/allDepartments'
     );
   }
 
@@ -29,26 +29,26 @@ export class DepartmentService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/department'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/department'
     );
   }
 
   searchDepartmentById(departmentId: string): Observable<Department> {
     return this.http.get<Department>(
-      'http://localhost:7000/employee/departments/' + departmentId
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/' + departmentId
     );
   }
 
   updateDepartment(departmentId: string): Observable<Department> {
     return this.http.put<Department>(
-      'http://localhost:7000/employee/departments/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/update',
       departmentId
     );
   }
 
   deleteDepartment(departmentId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/departments/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/' +
         departmentId +
         '?updatedBy=Admin'
     );
@@ -57,7 +57,7 @@ export class DepartmentService {
     params: HttpParams
   ): Observable<{ content: Array<Department>; totalElements: number }> {
     return this.http.get<{ content: Array<Department>; totalElements: number }>(
-      'http://localhost:7000/employee/departments/search',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/departments/search',
       {
         params: params,
       }

@@ -19,7 +19,7 @@ export class UserRoleService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7080/data-table-metadata/userRoles'
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/data-table-metadata/userRoles'
     );
   }
 
@@ -27,7 +27,7 @@ export class UserRoleService {
     params: HttpParams
   ): Observable<{ content: Array<UserRole>; totalElements: number }> {
     return this.http.get<{ content: Array<UserRole>; totalElements: number }>(
-      'http://localhost:7080/role/page-all-realm',
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role/page-all-realm',
       {
         params: params,
       }
@@ -36,28 +36,28 @@ export class UserRoleService {
 
   createRole(role: UserRole): Observable<UserRole> {
     return this.http.post<UserRole>(
-      'http://localhost:7080/role/create',
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role/create',
       role
     );
   }
 
   getRoles(): Observable<Array<UserRole>> {
     return this.http.get<Array<UserRole>>(
-      'http://localhost:7080/role/get-all-realm'
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role/get-all-realm'
     );
   }
 
   searchRoleById(roleId: string): Observable<UserRole> {
-    return this.http.get<UserRole>('http://localhost:7080/role/' + roleId);
+    return this.http.get<UserRole>('https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role/' + roleId);
   }
 
   updateRole(role: UserRole): Observable<UserRole> {
-    return this.http.put<UserRole>('http://localhost:7080/role', role);
+    return this.http.put<UserRole>('https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role', role);
   }
 
   deleteRole(roleId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7080/role/' + roleId
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/role/' + roleId
     );
   }
 

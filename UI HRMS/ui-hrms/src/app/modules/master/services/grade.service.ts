@@ -14,14 +14,14 @@ export class GradeService {
 
   getGrades(): Observable<Array<Grade>> {
     return this.http.get<Array<Grade>>(
-      'http://localhost:7000/employee/grade/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/get-all'
     );
 
   }
 
   getGradesHeaders(): Observable<{ columnsMetadata: Array<ColumnsMetadata> }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/grade'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/grade'
     );
   }
 
@@ -29,28 +29,28 @@ export class GradeService {
     console.log('in create service', data);
 
     return this.http.post<Array<Grade>>(
-      'http://localhost:7000/employee/grade/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/create',
       data
     );
   }
 
   searchByGradeId(id: string): Observable<Grade> {
     return this.http.get<Grade>(
-      'http://localhost:7000/employee/grade/' + id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/' + id
     );
   }
 
   updateGrade(data: Grade): Observable<Array<Grade>> {
     console.log(data);
     return this.http.put<Array<Grade>>(
-      'http://localhost:7000/employee/grade/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/update',
       data
     );
   }
 
   deleteGrade(gradeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/grade/delete/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/delete/' +
       gradeId +
       '?updatedBy=Admin'
     );
@@ -58,7 +58,7 @@ export class GradeService {
 
   gradeTypeFromCommonMaster(): Observable<{ gradeType: Array<GradeType> }> {
     return this.http.get<{ gradeType: Array<GradeType> }>(
-      'http://localhost:8000/utility/masters/commonMaster/Grade Type'
+      'https://localhost:8000/utility/masters/commonMaster/Grade Type'
     );
   }
 
@@ -66,7 +66,7 @@ export class GradeService {
     params: HttpParams
   ): Observable<{ content: Array<Grade>; totalElements: number }> {
     return this.http.get<{ content: Array<Grade>; totalElements: number }>(
-      'http://localhost:7000/employee/grade/get',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/grade/get',
       {
         params: params,
       }

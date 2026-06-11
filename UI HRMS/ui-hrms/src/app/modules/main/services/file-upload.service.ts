@@ -12,12 +12,12 @@ export class FileUploadService {
   uploadImage(file: File): Observable<any> {
     const form = new FormData();
     form.append('file', file);
-    return this.http.post('http://localhost:7010/file/save', form);
+    return this.http.post('https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/file/save', form);
   }
 
   removeImage(file: String): Observable<any> {
     return this.http.delete(
-      'http://localhost:7010/file/delete?file=' + file
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/file/delete?file=' + file
     );
   }
 

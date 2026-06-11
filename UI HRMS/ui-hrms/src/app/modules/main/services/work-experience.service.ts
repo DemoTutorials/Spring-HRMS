@@ -22,7 +22,7 @@ export class WorkExperienceService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/work-experience'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/work-experience'
     );
   }
 
@@ -32,7 +32,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<WorkExperience> {
     return this.http.post<WorkExperience>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/add`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/add`,
 
       workExperience
     );
@@ -44,7 +44,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<WorkExperience> {
     return this.http.put<WorkExperience>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/update`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/update`,
 
       workExperience
     );
@@ -52,7 +52,7 @@ export class WorkExperienceService {
 
   getWorkExperiences(employeeId: number): Observable<Array<WorkExperience>> {
     return this.http.get<Array<WorkExperience>>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/get-all`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/get-all`
     );
   }
 
@@ -62,7 +62,7 @@ export class WorkExperienceService {
     employeeId: number
   ): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/${workExperienceId}?updatedBy=Admin`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/${workExperienceId}?updatedBy=Admin`
     );
   }
 
@@ -72,7 +72,7 @@ export class WorkExperienceService {
     workExperienceId: number
   ): Observable<WorkExperience> {
     return this.http.get<WorkExperience>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/${workExperienceId}`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/${workExperienceId}`
     );
   }
 
@@ -90,7 +90,7 @@ export class WorkExperienceService {
 
       totalElements: number;
     }>(
-      `http://localhost:7000/employee/work-experience/${employeeId}/search`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/work-experience/${employeeId}/search`,
 
       {
         params: params,

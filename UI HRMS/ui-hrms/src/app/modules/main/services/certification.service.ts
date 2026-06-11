@@ -15,14 +15,14 @@ export class CertificationService {
     employeeId: number
   ): Observable<Certification> {
     return this.http.post<Certification>(
-      `http://localhost:7000/employee/certification/${employeeId}/add`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/certification/${employeeId}/add`,
       certification
     );
   }
 
   updateCertification(certification: Certification, employeeId: number) {
     return this.http.put<Certification>(
-      `http://localhost:7000/employee/certification/${employeeId}/update`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/certification/${employeeId}/update`,
       certification
     );
   }
@@ -33,7 +33,7 @@ export class CertificationService {
 
   getCertifications(employeeId: number): Observable<Array<Certification>> {
     return this.http.get<Array<Certification>>(
-      `http://localhost:7000/employee/education/${employeeId}/get-all`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/get-all`
     );
   }
 
@@ -41,7 +41,7 @@ export class CertificationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/certification'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/certification'
     );
   }
 
@@ -50,7 +50,7 @@ export class CertificationService {
     certificationId: number
   ): Observable<Certification> {
     return this.http.get<Certification>(
-      `http://localhost:7000/employee/certification/${employeeId}/${certificationId}`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/certification/${employeeId}/${certificationId}`
     );
   }
 
@@ -59,7 +59,7 @@ export class CertificationService {
     employeeId: number
   ): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      `http://localhost:7000/employee/certification/${employeeId}/${certificationsId}?updatedBy='Admin'`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/certification/${employeeId}/${certificationsId}?updatedBy='Admin'`
     );
   }
   search(
@@ -72,7 +72,7 @@ export class CertificationService {
     return this.http.get<{
       content: Array<Certification>;
       totalElements: number;
-    }>(`http://localhost:7000/employee/certification/${employeeId}/search`, {
+    }>(`https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/certification/${employeeId}/search`, {
       params: params,
     });
   }

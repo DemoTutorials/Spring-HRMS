@@ -27,14 +27,14 @@ export class JoiningDetailsService {
     joiningDetails: JoiningDetails
   ): Observable<JoiningDetails> {
     return this.http.post<JoiningDetails>(
-      `http://localhost:7000/employee/joining-detail/create/${employeeId}`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/joining-detail/create/${employeeId}`,
 
       joiningDetails
     );
   }
   getByEmployeeId(id: number): Observable<JoiningDetails> {
     return this.http.get<JoiningDetails>(
-      'http://localhost:7000/employee/joining-detail/' + id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/joining-detail/' + id
     );
   }
   updateJoiningDetails(
@@ -42,7 +42,7 @@ export class JoiningDetailsService {
     joiningDetails: JoiningDetails
   ): Observable<JoiningDetails> {
     return this.http.put<JoiningDetails>(
-      `http://localhost:7000/employee/joining-detail/update/${employeeId}`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/joining-detail/update/${employeeId}`,
 
       joiningDetails
     );

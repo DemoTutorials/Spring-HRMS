@@ -22,7 +22,7 @@ export class AddressService {
     console.log(id);
 
     return this.http.post<Address[]>(
-      `http://localhost:7000/employee/address/${id}/add`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/address/${id}/add`,
 
       formDataArray
     );
@@ -32,7 +32,7 @@ export class AddressService {
     console.log('update' + id);
 
     return this.http.put<Address[]>(
-      `http://localhost:7000/employee/address/${id}/update-addresses`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/address/${id}/update-addresses`,
 
       formDataArray
     );
@@ -40,7 +40,7 @@ export class AddressService {
 
   getAllAddressById(id: number): Observable<Address[]> {
     return this.http.get<Address[]>(
-      `http://localhost:7000/employee/address/${id}/get-all`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/address/${id}/get-all`
     );
   }
 
@@ -48,32 +48,32 @@ export class AddressService {
     console.log('get address by employee id :' + id);
 
     return this.http.get<Address>(
-      `http://localhost:7000/employee/address/${id}/${addressType}`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/address/${id}/${addressType}`
     );
   }
 
   getAddressType(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Address Type?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Address Type?sort=priority,code'
     );
   }
 
   getOwnershipStatus(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Ownership Status?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Ownership Status?sort=priority,code'
     );
   }
 
   getCountry(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Country?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Country?sort=priority,code'
     );
   }
 
   getState(code: string): Observable<Array<CommonMaster>> {
     console.log('state foreign key' + code);
 
-    const url = `http://localhost:7000/employee/common-master/State?sort=priority,code&dependent=${code}`;
+    const url = `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/State?sort=priority,code&dependent=${code}`;
 
     return this.http.get<Array<CommonMaster>>(url);
   }
@@ -81,7 +81,7 @@ export class AddressService {
   getCity(code: string): Observable<Array<CommonMaster>> {
     console.log('city foreign key' + code);
 
-    const url = `http://localhost:7000/employee/common-master/City?sort=priority,code&dependent=${code}`;
+    const url = `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/City?sort=priority,code&dependent=${code}`;
 
     return this.http.get<Array<CommonMaster>>(url);
   }
@@ -89,7 +89,7 @@ export class AddressService {
   allCity(): Observable<Array<CommonMaster>> {
     console.log('city foreign key');
 
-    const url = `http://localhost:7000/employee/common-master/City?sort=priority,code`;
+    const url = `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/City?sort=priority,code`;
 
     return this.http.get<Array<CommonMaster>>(url);
   }
@@ -97,7 +97,7 @@ export class AddressService {
   allState(): Observable<Array<CommonMaster>> {
     console.log('state foreign key');
 
-    const url = `http://localhost:7000/employee/common-master/State?sort=priority,code`;
+    const url = `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/State?sort=priority,code`;
 
     return this.http.get<Array<CommonMaster>>(url);
   }

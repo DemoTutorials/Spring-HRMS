@@ -15,14 +15,14 @@ export class EmployeeTypeService {
 
   createEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(
-      'http://localhost:7000/employee/employee-type/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/create',
       employee
     );
   }
 
   getEmployeeTypes(): Observable<Array<Employee>> {
     return this.http.get<Array<Employee>>(
-      'http://localhost:7000/employee/employee-type/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/get-all'
     );
   }
 
@@ -30,26 +30,26 @@ export class EmployeeTypeService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/employeeType-type'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/employeeType-type'
     );
   }
 
   searchEmployeeById(id: number): Observable<Employee> {
     return this.http.get<Employee>(
-      'http://localhost:7000/employee/employee-type/by-id/' + id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/by-id/' + id
     );
   }
 
   updateEmployee(employeeTypeId: string): Observable<Employee> {
     return this.http.put<Employee>(
-      'http://localhost:7000/employee/employee-type/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/update',
       employeeTypeId
     );
   }
 
   deleteEmployee(employeeTypeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/employee-type/delete/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/delete/' +
         employeeTypeId +
         '?updatedBy=Admin'
     );
@@ -59,7 +59,7 @@ export class EmployeeTypeService {
     params: HttpParams
   ): Observable<{ content: Array<Employee>; totalElements: number }> {
     return this.http.get<{ content: Array<Employee>; totalElements: number }>(
-      'http://localhost:7000/employee/employee-type/search',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/employee-type/search',
       {
         params: params,
       }

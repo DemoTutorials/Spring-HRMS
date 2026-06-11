@@ -12,7 +12,7 @@ export class LoginService {
 
   authenticate(data: LoginRequest): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(
-      'http://localhost:8090/auth/login',
+      'https://8090-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/auth/login',
       data
     );
   }

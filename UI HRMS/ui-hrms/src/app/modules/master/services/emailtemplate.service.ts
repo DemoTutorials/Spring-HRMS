@@ -14,14 +14,14 @@ private dataSubject = new BehaviorSubject<string>('');
   public data$ = this.dataSubject.asObservable();
   createEmailTemplate(emailtemplate:EmailTemplate): Observable<EmailTemplate> {
     return this.http.post<EmailTemplate>(
-      'http://localhost:7010/template/create',
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/create',
       emailtemplate
     );
   }
 
   // createEmailTemplate(emailtemplate:EmailTemplate): Observable<EmailTemplate> {
   //   return this.http.post<EmailTemplate>(
-  //     'http://localhost:7010/email/schedule',
+  //     'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/email/schedule',
   //     emailtemplate
   //   );
   // }
@@ -30,19 +30,19 @@ private dataSubject = new BehaviorSubject<string>('');
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7010/data-table-metadata/template-info'
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/data-table-metadata/template-info'
     );
   }
 
   searchEmailTemplateById(id: number): Observable<EmailTemplate> {
     return this.http.get<EmailTemplate>(
-      'http://localhost:7010/template/' + id
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/' + id
     );
   }
 
   updateEmailTemplateById(id: number): Observable<EmailTemplate> {
     return this.http.put<EmailTemplate>(
-      'http://localhost:7010/template/update',
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/update',
       id
     );
   }
@@ -51,7 +51,7 @@ private dataSubject = new BehaviorSubject<string>('');
     params: HttpParams
   ): Observable<{ content: Array<EmailTemplate>; totalElements: number }> {
     return this.http.get<{ content: Array<EmailTemplate>; totalElements: number }>(
-      'http://localhost:7010/template/get-all',
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/get-all',
       {
         params: params,
       }
@@ -60,12 +60,12 @@ private dataSubject = new BehaviorSubject<string>('');
 
   deleteEmailTemplate(id: number): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7010/template/' +
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/' +
         id +
         '?updatedBy=Admin'
     );
   }
-  //http://localhost:7010/template/get-all
+  //https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/template/get-all
   notify(message: string) {
     const toastrConfig: Partial<IndividualConfig> = {
       timeOut: 2500,

@@ -14,7 +14,7 @@ export class OrganizationService {
 
   getOrganizations(): Observable<Array<Organization>> {
     return this.http.get<Array<Organization>>(
-      'http://localhost:7000/employee/organization/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/get-all'
     );
   }
 
@@ -22,7 +22,7 @@ export class OrganizationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/organization'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/organization'
     );
   }
 
@@ -30,27 +30,27 @@ export class OrganizationService {
     console.log('in create service', data);
 
     return this.http.post<Array<Organization>>(
-      'http://localhost:7000/employee/organization/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/create',
       data
     );
   }
 
   searchOrganizationByCode(orgCode: string): Observable<Organization> {
     return this.http.get<Organization>(
-      'http://localhost:7000/employee/organization/' + orgCode
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/' + orgCode
     );
   }
 
   updateOrganization(data: Organization): Observable<Array<Organization>> {
     return this.http.put<Array<Organization>>(
-      'http://localhost:7000/employee/organization/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/update',
       data
     );
   }
 
   deleteOrganization(orgCode: string): Observable<string> {
     return this.http.delete<string>(
-      'http://localhost:7000/employee/organization/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/' +
         orgCode +
         '?updatedBy=Admin'
     );
@@ -62,7 +62,7 @@ export class OrganizationService {
     return this.http.get<{
       content: Array<Organization>;
       totalElements: number;
-    }>('http://localhost:7000/employee/organization/search', {
+    }>('https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/organization/search', {
       params: params,
     });
   }

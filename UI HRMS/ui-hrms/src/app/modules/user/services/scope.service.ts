@@ -16,7 +16,7 @@ export class ScopeService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7080/data-table-metadata/scope'
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/data-table-metadata/scope'
     );
   }
 
@@ -24,7 +24,7 @@ export class ScopeService {
     params: HttpParams
   ): Observable<{ content: Array<Scope>; totalElements: number }> {
     return this.http.get<{ content: Array<Scope>; totalElements: number }>(
-      'http://localhost:7080/scope/search',
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope/search',
       {
         params: params,
       }
@@ -33,28 +33,28 @@ export class ScopeService {
 
   createScope(scope: Scope): Observable<Scope> {
     return this.http.post<Scope>(
-      'http://localhost:7080/scope/create',
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope/create',
       scope
     );
   }
 
   getScopes(): Observable<Array<Scope>> {
     return this.http.get<Array<Scope>>(
-      'http://localhost:7080/scope/get-all'
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope/get-all'
     );
   }
 
   searchScopeById(scopeId: string): Observable<Scope> {
-    return this.http.get<Scope>('http://localhost:7080/scope/' + scopeId);
+    return this.http.get<Scope>('https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope/' + scopeId);
   }
 
   updateScope(scope: Scope): Observable<Scope> {
-    return this.http.put<Scope>('http://localhost:7080/scope', scope);
+    return this.http.put<Scope>('https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope', scope);
   }
 
   deleteScope(scopeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7080/scope/' + scopeId
+      'https://7080-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/scope/' + scopeId
     );
   }
 

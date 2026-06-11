@@ -14,19 +14,19 @@ export class CompanyDetailsService {
 
   getAllDefaultShift(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Default Shift?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Default Shift?sort=priority,code'
     );
   }
 
   getAllProbations(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Probation?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Probation?sort=priority,code'
     );
   }
 
   getAllBillables(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Billable?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Billable?sort=priority,code'
     );
   }
 
@@ -35,7 +35,7 @@ export class CompanyDetailsService {
     employeeId: number
   ): Observable<CompanyDetails> {
     return this.http.put<CompanyDetails>(
-      'http://localhost:7000/employee/company-detail/update/' + employeeId,
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/company-detail/update/' + employeeId,
       companyDetails
     );
   }
@@ -52,20 +52,20 @@ export class CompanyDetailsService {
   }
   createComapanyDetails(companyDetails: CompanyDetails, id: number) {
     return this.http.post<CompanyDetails>(
-      'http://localhost:7000/employee/company-detail/create/' + id,
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/company-detail/create/' + id,
       companyDetails
     );
   }
 
   searchCompanyDetailsById(Id: string): Observable<CompanyDetails> {
     return this.http.get<CompanyDetails>(
-      'http://localhost:7000/employee/company-detail/' + Id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/company-detail/' + Id
     );
   }
 
   // updateCompanyDetails(formData: any) {
   //   return this.http.put<Employees>(
-  //     'http://localhost:7000/employee/update',
+  //     'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/update',
   //     Id
   //   );
   // }

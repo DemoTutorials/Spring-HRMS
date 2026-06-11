@@ -25,7 +25,7 @@ export class EmployeeService {
   createEmployee(employee: Employees): Observable<Employees> {
     console.log(employee);
     return this.http.post<Employees>(
-      'http://localhost:7000/employee/add',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/add',
       employee
     );
   }
@@ -35,7 +35,7 @@ export class EmployeeService {
     emp_id: number
   ): Observable<EmployeePersonalDetails> {
     return this.http.post<EmployeePersonalDetails>(
-      'http://localhost:7000/employee/personal-details/create/' + emp_id,
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/personal-details/create/' + emp_id,
       employee
     );
   }
@@ -43,14 +43,14 @@ export class EmployeeService {
   AddVisaDetails(visa: Visa, emp_id: number): Observable<Visa> {
     //visa: Visa
     return this.http.post<Visa>(
-      'http://localhost:7000/employee/visa/' + emp_id + '/add',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/visa/' + emp_id + '/add',
       visa
     );
   }
 
   updateEmployee(Id: string): Observable<Employees> {
     return this.http.put<Employees>(
-      'http://localhost:7000/employee/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/update',
       Id
     );
   }
@@ -58,7 +58,7 @@ export class EmployeeService {
   updateEmployeevisa(Id: string, emp_id: number): Observable<Visa> {
     console.log('visaaaid', Id);
     return this.http.put<Visa>(
-      'http://localhost:7000/employee/visa/' + emp_id + '/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/visa/' + emp_id + '/update',
       Id
     );
   }
@@ -69,20 +69,20 @@ export class EmployeeService {
   ): Observable<EmployeePersonalDetails> {
     console.log('visaaaid', Id);
     return this.http.put<EmployeePersonalDetails>(
-      'http://localhost:7000/employee/personal-details/update/' + emp_id,
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/personal-details/update/' + emp_id,
       Id
     );
   }
 
   searchEmployeeById(Id: string): Observable<Employees> {
-    return this.http.get<Employees>('http://localhost:7000/employee/' + Id);
+    return this.http.get<Employees>('https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/' + Id);
   }
 
   getEmployeeHeaders(): Observable<{
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/employee'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/employee'
     );
   }
 
@@ -90,7 +90,7 @@ export class EmployeeService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/visa'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/visa'
     );
   }
 
@@ -98,7 +98,7 @@ export class EmployeeService {
     params: HttpParams
   ): Observable<{ content: Array<Employees>; totalElements: number }> {
     return this.http.get<{ content: Array<Employees>; totalElements: number }>(
-      'http://localhost:7000/employee/search',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/search',
       {
         params: params,
       }
@@ -110,7 +110,7 @@ export class EmployeeService {
     id: number
   ): Observable<{ content: Array<Visa>; totalElements: number }> {
     return this.http.get<{ content: Array<Visa>; totalElements: number }>(
-      'http://localhost:7000/employee/visa/' + id + '/search',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/visa/' + id + '/search',
       {
         params: params,
       }
@@ -119,7 +119,7 @@ export class EmployeeService {
 
   searchVisaById(emp_id: string, visaid: number): Observable<Visa> {
     return this.http.get<Visa>(
-      'http://localhost:7000/employee/visa/' + emp_id + '/' + visaid
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/visa/' + emp_id + '/' + visaid
     );
   }
 
@@ -127,19 +127,19 @@ export class EmployeeService {
     emp_id: string
   ): Observable<EmployeePersonalDetails> {
     return this.http.get<EmployeePersonalDetails>(
-      'http://localhost:7000/employee/personal-details/' + emp_id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/personal-details/' + emp_id
     );
   }
 
   deleteEmployee(employeeId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/' + employeeId + '?updatedBy=Admin'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/' + employeeId + '?updatedBy=Admin'
     );
   }
 
   deleteEmployeeVisa(visa_id: any, employeeId: any): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/visa/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/visa/' +
         employeeId +
         '/' +
         visa_id +
@@ -161,49 +161,49 @@ export class EmployeeService {
 
   getTitle(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Title?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Title?sort=priority,code'
     );
   }
 
   getGender(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Gender?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Gender?sort=priority,code'
     );
   }
 
   getAllEmployee(): Observable<Array<Employees>> {
     return this.http.get<Array<Employees>>(
-      'http://localhost:7000/employee/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/get-all'
     );
   }
 
   getMaritalStatus(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Marital Status?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Marital Status?sort=priority,code'
     );
   }
 
   getBloodGroup(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Blood Group?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Blood Group?sort=priority,code'
     );
   }
 
   getCountryCode(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Country?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Country?sort=priority,code'
     );
   }
 
   getStatus(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      'http://localhost:7000/employee/common-master/Status?sort=priority,code'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Status?sort=priority,code'
     );
   }
 
   deleteProfileImage(employeeId: number): Observable<Employees> {
     return this.http.delete<Employees>(
-      'http://localhost:7000/employee/delete/image/' + employeeId
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/delete/image/' + employeeId
     );
   }
 }

@@ -16,7 +16,7 @@ export class EmailService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7010/data-table-metadata/email-info'
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/data-table-metadata/email-info'
     );
   }
 
@@ -24,7 +24,7 @@ export class EmailService {
     params: HttpParams
   ): Observable<{ content: Array<Email>; totalElements: number }> {
     return this.http.get<{ content: Array<Email>; totalElements: number }>(
-      'http://localhost:7010/email/get-all',
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/email/get-all',
       {
         params: params,
       }
@@ -33,7 +33,7 @@ export class EmailService {
 
   searchEmailById(id: string): Observable<Email> {
     return this.http.get<Email>(
-      'http://localhost:7010/email/get?id=' + id
+      'https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/email/get?id=' + id
     );
   }
       createEmail(formData:FormData): Observable<any> {
@@ -45,7 +45,7 @@ export class EmailService {
           })
         };
   
-    return this.http.post('http://localhost:7010/email/send', formData);
+    return this.http.post('https://7010-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/email/send', formData);
    
   }
 

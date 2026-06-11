@@ -16,7 +16,7 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<EducationalQualification> {
     return this.http.post<EducationalQualification>(
-      `http://localhost:7000/employee/education/${employeeId}/add`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/add`,
       educationalQualification
     );
   }
@@ -26,7 +26,7 @@ export class EducationalQualificationService {
     employeeId: number
   ) {
     return this.http.put<EducationalQualification>(
-      `http://localhost:7000/employee/education/${employeeId}/update`,
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/update`,
       educationalQualification
     );
   }
@@ -39,13 +39,13 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<Array<EducationalQualification>> {
     return this.http.get<Array<EducationalQualification>>(
-      `http://localhost:7000/employee/education/${employeeId}/get-all`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/get-all`
     );
   }
 
   getQualificationLevels(): Observable<Array<CommonMaster>> {
     return this.http.get<Array<CommonMaster>>(
-      `http://localhost:7000/employee/common-master/Qualification Level?sort=priority,code`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/common-master/Qualification Level?sort=priority,code`
     );
   }
 
@@ -53,7 +53,7 @@ export class EducationalQualificationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/educational-qualification'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/educational-qualification'
     );
   }
 
@@ -62,7 +62,7 @@ export class EducationalQualificationService {
     educationalId: number
   ): Observable<EducationalQualification> {
     return this.http.get<EducationalQualification>(
-      `http://localhost:7000/employee/education/${employeeId}/${educationalId}`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/${educationalId}`
     );
   }
 
@@ -71,7 +71,7 @@ export class EducationalQualificationService {
     employeeId: number
   ): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      `http://localhost:7000/employee/education/${employeeId}/${EducationalQualificationId}?updatedBy='Admin'`
+      `https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/${EducationalQualificationId}?updatedBy='Admin'`
     );
   }
   search(
@@ -84,7 +84,7 @@ export class EducationalQualificationService {
     return this.http.get<{
       content: Array<EducationalQualification>;
       totalElements: number;
-    }>(`http://localhost:7000/employee/education/${employeeId}/search`, {
+    }>(`https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/education/${employeeId}/search`, {
       params: params,
     });
   }

@@ -14,7 +14,7 @@ export class DesignationService {
 
   getDesignations(): Observable<Array<Designation>> {
     return this.http.get<Array<Designation>>(
-      'http://localhost:7000/employee/designation/get-all'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/get-all'
 
     );
 
@@ -24,7 +24,7 @@ export class DesignationService {
     columnsMetadata: Array<ColumnsMetadata>;
   }> {
     return this.http.get<{ columnsMetadata: Array<ColumnsMetadata> }>(
-      'http://localhost:7000/employee/data-table-metadata/designation'
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/data-table-metadata/designation'
     );
   }
 
@@ -32,28 +32,28 @@ export class DesignationService {
     console.log('in create service', data);
 
     return this.http.post<Array<Designation>>(
-      'http://localhost:7000/employee/designation/create',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/create',
       data
     );
   }
 
   searchDesignationById(id: string): Observable<Designation> {
     return this.http.get<Designation>(
-      'http://localhost:7000/employee/designation/' + id
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/' + id
     );
   }
 
   updateDesignation(data: Designation): Observable<Array<Designation>> {
     console.log(data);
     return this.http.put<Array<Designation>>(
-      'http://localhost:7000/employee/designation/update',
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/update',
       data
     );
   }
 
   deleteDesignation(designationId: string): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(
-      'http://localhost:7000/employee/designation/' +
+      'https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/' +
       designationId +
       '?updatedBy=Admin'
     );
@@ -65,7 +65,7 @@ export class DesignationService {
     return this.http.get<{
       content: Array<Designation>;
       totalElements: number;
-    }>('http://localhost:7000/employee/designation/search', {
+    }>('https://7000-cs-c654acac-fddf-4efb-9c03-55cbb459e207.cs-asia-southeast1-palm.cloudshell.dev/employee/designation/search', {
       params: params,
     });
   }
